@@ -1,1 +1,1 @@
-@recipes_flow = [:gitignore, :database]
+@recipes_flow = [:rubyversion, :gitignore, :database]

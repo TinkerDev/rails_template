@@ -4,6 +4,7 @@ require 'open-uri'
 @application_name = Rails.application.class.parent_name
 
 @recipes = [
+  :rubyversion,
   :gitignore,
   :database
 ]
