@@ -1,3 +1,3 @@
 def recipe_gitignore
-  file '.gitignore', File.read("#{@static_files_path}/.gitignore")
+  file '.gitignore', open("#{@static_files_path}/.gitignore").read
 end

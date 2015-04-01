@@ -1,5 +1,4 @@
-require "net/http"
-require "net/https"
+require 'open-uri'
 
 @static_files_path = File.join(@template_path, 'static_files')
 @application_name = Rails.application.class.parent_name
