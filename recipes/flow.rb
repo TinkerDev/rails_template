@@ -1,1 +1,1 @@
-@recipes_flow = [:gitignore]
+@recipes_flow = [:gitignore, :database]

@@ -2,9 +2,11 @@ require "net/http"
 require "net/https"
 
 @static_files_path = File.join(@template_path, 'static_files')
+@application_name = Rails.application.class.parent_name
 
 @recipes = [
-  :gitignore
+  :gitignore,
+  :database
 ]
 
 def perform_recipe recipe
