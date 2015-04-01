@@ -4,13 +4,21 @@
 
 Как использовать
 ============
+  Если создаем новое приложение
 
     $ rails new Blog -m https://raw.githubusercontent.com/TinkerDev/rails_template/master/new.rb
 
-если у нас уже есть рельсовое приложение, то
+  Если обновляем приложение
 
     $ bin/rake rails:template LOCATION=https://raw.githubusercontent.com/TinkerDev/rails_template/master/update.rb
 
-если хотим выполнить какойто отдельный рецепт
+  Если хотим исполнить какойто рецепт
 
     $ bin/rake rails:template LOCATION=https://raw.githubusercontent.com/TinkerDev/rails_template/master/custom.rb
+
+Рецепты
+=======
+
+* rubyversion - ставит последнюю версию руби
+* gitignore - добавляет файл гитигнора
+* database - предустаналивает database.yml и database.yml.example
