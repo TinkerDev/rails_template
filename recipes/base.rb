@@ -1,17 +1,17 @@
 require 'open-uri'
 
 @static_files_path = File.join(@template_path, 'static_files')
-@application_name = app_name
 
 @recipes = [
   :rubyversion,
   :gitignore,
   :database,
-  :commit_existing_application
+  :commit_existing_application,
+  :gems
 ]
 
-@new_recipes_flow = [:gitignore, :commit_existing_application, :rubyversion, :database]
-@update_recipes_flow = [:gitignore, :rubyversion, :database]
+@new_recipes_flow = [:gitignore, :commit_existing_application, :rubyversion, :database, :gems]
+@update_recipes_flow = [:gitignore, :rubyversion, :database, :gems]
 
 def perform_recipe recipe
   if @recipes.include?(recipe.to_sym)
