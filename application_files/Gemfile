@@ -62,9 +62,9 @@ gem 'sprockets-rails'
 # gem 'sass-rails', '~> 5.0'
 
 # Uploading
-# gem 'mini_magick'
+gem 'mini_magick'
 # gem 'rmagick'
-# gem 'carrierwave'
+gem 'carrierwave'
 
 # Admin
 # gem 'devise'
@@ -136,6 +136,7 @@ group :development do
 
   gem "mailcatcher", :require => false
   gem 'ruby-progressbar'
+  gem 'thin'
 
   # gem 'meta_request' # rails_panel in chrome
   # gem 'ruby-graphviz'

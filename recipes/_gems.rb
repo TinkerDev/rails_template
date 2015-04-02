@@ -1,4 +1,11 @@
 def recipe_gems
   run "rm Gemfile.lock"
-  file 'Gemfile', open("#{@static_files_path}/Gemfile").read
+  copy_application_file('Gemfile')
+
+  prepare_carrierwave
+end
+
+def prepare_carrierwave
+  copy_application_file('initializers/carrierwave.rb')
+  copy_application_file('app/uploaders/base_uploader.rb')
 end

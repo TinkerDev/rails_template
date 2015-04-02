@@ -1,3 +1,3 @@
 def recipe_gitignore
-  file '.gitignore', open("#{@static_files_path}/.gitignore").read
+  copy_application_file('.gitignore')
 end
