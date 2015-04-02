@@ -22,3 +22,5 @@
 * rubyversion - ставит последнюю версию руби
 * gitignore - добавляет файл гитигнора
 * database - предустаналивает database.yml и database.yml.example
+* gems - фигачит следующие гемы
+    * carrierwave - initializers/carrierwave.rb и app/uploders/base_uploader.rb
