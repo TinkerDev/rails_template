@@ -7,5 +7,5 @@ end
 
 def prepare_carrierwave
   copy_application_file('initializers/carrierwave.rb')
-  copy_application_file('app/uploaders/base_uploader.rb')
+  copy_application_file('app/uploaders/application_uploader.rb')
 end

@@ -1,5 +1,5 @@
 if defined? CarrierWave
-  class BaseUploader < CarrierWave::Uploader::Base
+  class ApplicationUploader < CarrierWave::Uploader::Base
 
     # Include RMagick or MiniMagick support:
     #include CarrierWave::RMagick
