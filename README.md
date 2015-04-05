@@ -24,3 +24,15 @@
 * database - предустаналивает config/database.yml и config/database.yml.example
 * gems - фигачит следующие гемы
     * carrierwave - initializers/carrierwave.rb и app/uploders/application_uploader.rb
+* ansible - добавляет /ansible конфигурацию
+
+Ansible
+=======
+
+  Чтобы постоянно не вводить пароль от рута, нужно воткнуть свой id_rsa.pub в ~/.ssh/authorized_keys на серваке
+
+    $ ansible-playbook -i IP, playbook.yml
+
+  Если проснулся панароик, то можно указать ansible требовать ключ от рута
+
+    $ ansible-playbook -i IP, playbook.yml -k

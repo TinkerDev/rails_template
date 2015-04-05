@@ -24,7 +24,6 @@ gem 'pg'
 # Form Objects
 # gem 'model_pretender', :git => 'git://github.com/TinkerDev/model_pretender.git'
 
-
 # Views Core
 gem 'slim-rails'
 
@@ -94,7 +93,6 @@ gem 'carrierwave'
 #gem 'airbrake_user_attributes'
 # gem 'airbrake', :github => 'airbrake/airbrake'
 
-
 # Seo
 # gem 'sitemap_generator', :git => 'git://github.com/kjvarga/sitemap_generator.git'
 # gem 'meta-tags', :require=>'meta_tags'
@@ -108,6 +106,9 @@ gem 'carrierwave'
 
 # Versions
 # gem 'semver2'
+
+# Server
+gem 'puma'
 
 # Usefull Stuff
 # gem 'tinymce-rails'
@@ -136,11 +137,16 @@ group :development do
 
   gem "mailcatcher", :require => false
   gem 'ruby-progressbar'
-  gem 'thin'
 
   # gem 'meta_request' # rails_panel in chrome
   # gem 'ruby-graphviz'
   # gem 'holepicker', :require => false
+
+  # predeploy
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-puma'
 end
 
 gem 'rspec-rails', :group => [:development, :test]

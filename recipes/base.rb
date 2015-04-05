@@ -7,11 +7,13 @@ require 'open-uri'
   :gitignore,
   :database,
   :commit_existing_application,
-  :gems
+  :gems,
+  :deploy,
+  :ansible
 ]
 
-@new_recipes_flow = [:gitignore, :commit_existing_application, :rubyversion, :database, :gems]
-@update_recipes_flow = [:gitignore, :rubyversion, :database, :gems]
+@new_recipes_flow = [:gitignore, :commit_existing_application, :rubyversion, :database, :gems, :deploy, :ansible]
+@update_recipes_flow = [:gitignore, :rubyversion, :database, :gems, :deploy, :ansible]
 
 def perform_recipe recipe
   if @recipes.include?(recipe.to_sym)
