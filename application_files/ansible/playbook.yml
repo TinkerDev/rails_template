@@ -122,7 +122,6 @@
 
     - name: 'postgresql | copy database.yml'
       template: 'src=configs/database.yml dest={{ application }}/shared/config/database.yml owner={{ user }} group={{ user }} mode=0644'
-      when: 'postgres_login|failed'
 
     - name: 'postgresql | create database'
       shell: 'createdb -U postgres -O postgres -E UTF8 -l en_US.UTF-8 {{ name }}_production'
