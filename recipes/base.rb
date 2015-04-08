@@ -36,10 +36,10 @@ def notify_recipe_performing recipe
 end
 
 def copy_application_file file_name
-  file file_name, application_file_path(file_name).read
+  file file_name, open(application_file_path(file_name)).read
 end
 
 def application_file_path file_name
-  open("#{@application_files_path}/#{file_name}")
+  "#{@application_files_path}/#{file_name}"
 end
 

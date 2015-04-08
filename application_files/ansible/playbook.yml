@@ -4,7 +4,7 @@
 
   vars:
     ruby_version: '2.2.1'
-    name: 'kiosksoft'
+    name: 'app_name'
     user: 'www{{ name }}'
     home: '/home/{{ user }}'
     rbenv_root: '{{ home }}/.rbenv'
