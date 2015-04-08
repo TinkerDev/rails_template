@@ -39,6 +39,10 @@ set :rbenv_roles, :all
 
 set :puma_init_active_record, true
 
+
+set :assets_dir, %w(public/uploads)
+set :local_assets_dir, %w(public/uploads)
+
 namespace :deploy do
 
   after :restart, :clear_cache do

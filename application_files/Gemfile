@@ -4,7 +4,7 @@ gem 'rails', '4.2.1'
 
 # Bd
 gem 'pg'
-# gem 'arel',      github: 'rails/arel'
+gem 'squeel'
 # gem 'counter_culture', '~> 0.1.23'
 # gem 'friendly_id', '~> 5.0.0'
 
@@ -20,6 +20,10 @@ gem 'pg'
 # Validations
 # gem 'validates'
 # gem 'phony_rails', :git => 'git://github.com/joost/phony_rails.git'
+
+# States
+# gem 'statesman'
+
 
 # Form Objects
 # gem 'model_pretender', :git => 'git://github.com/TinkerDev/model_pretender.git'
@@ -148,6 +152,7 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano3-puma'
   gem 'capistrano-rails-console'
+  gem "capistrano-db-tasks", require: false
 end
 
 gem 'rspec-rails', :group => [:development, :test]

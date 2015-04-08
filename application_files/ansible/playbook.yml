@@ -4,11 +4,15 @@
 
   vars:
     ruby_version: '2.2.1'
-    name: 'app_name'
+    name: 'kiosksoft'
     user: 'www{{ name }}'
     home: '/home/{{ user }}'
     rbenv_root: '{{ home }}/.rbenv'
     application: '{{ home }}/{{ name }}'
+    db_name: '{{name}}_production'
+    db_user: '{{user}}'
+    db_user_password: 2349sfsdf2374
+    db_encoding: utf8
 
   tasks:
     - name: 'apt | update'
@@ -35,6 +39,7 @@
         - 'redis-server'
         - 'postgresql'
         - 'postgresql-contrib'
+        - 'python-psycopg2'
         - 'libpq-dev'
         - 'imagemagick'
         - 'nodejs'
@@ -45,12 +50,6 @@
 
     - name: 'account | copy authorized keys'
       shell: 'mkdir -p {{ home }}/.ssh -m 700 && cp /root/.ssh/authorized_keys {{ home }}/.ssh && chown -R {{ user }}:{{ user }} {{ home }}/.ssh'
-
-#    - name: 'account | copy ssh private key'
-#      copy: 'src=keys/id_rsa dest={{ home }}/.ssh/id_rsa owner={{ user }} group={{ user }} mode=0600'
-
-#    - name: 'account | copy ssh public key'
-#      copy: 'src=keys/id_rsa.pub dest={{ home }}/.ssh/id_rsa.pub owner={{ user }} group={{ user }} mode=0644'
 
     ### Install ruby ###
     - name: 'rbenv | clone repo'
@@ -103,29 +102,21 @@
       when: 'ruby_installed|failed'
 
     ### Manage database ###
-    - name: 'postgresql | check user'
-      shell: 'psql -U postgres -c "\copyright"'
-      register: 'postgres_login'
-      ignore_errors: yes
+    - name: Restart PostgreSQL
+      command: service postgresql restart
 
-    - name: 'postgresql | set auth type'
-      copy: 'src=configs/pg_hba.conf dest=/etc/postgresql/9.3/main/pg_hba.conf owner=postgres group=postgres mode=0644'
-      when: 'postgres_login|failed'
+    - name: create the postgresql user for application
+      postgresql_user: name={{ db_user }} password={{ db_user_password }} role_attr_flags=NOSUPERUSER
+      sudo: yes
+      sudo_user: postgres
 
-    - name: 'postgresql | restart service'
-      service: name=postgresql state=restarted
-      when: 'postgres_login|failed'
-
-    - name: 'postgresql | create shared directory'
-      shell: 'mkdir -p {{ application }}/shared/config -m 775 && chown -R {{ user }}:{{ user }} {{ home }}/'
-      when: 'postgres_login|failed'
+    - name: create the postgresql database for application
+      postgresql_db: name={{ db_name }} owner={{ db_user }} encoding={{ db_encoding }} state=present
+      sudo: yes
+      sudo_user: postgres
 
     - name: 'postgresql | copy database.yml'
       template: 'src=configs/database.yml dest={{ application }}/shared/config/database.yml owner={{ user }} group={{ user }} mode=0644'
-
-    - name: 'postgresql | create database'
-      shell: 'createdb -U postgres -O postgres -E UTF8 -l en_US.UTF-8 {{ name }}_production'
-      when: 'postgres_login|failed'
 
 #    # Rails setup
 #    - name: 'rails | copy settings.yml'
