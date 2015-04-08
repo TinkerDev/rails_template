@@ -29,7 +29,7 @@
 Ansible
 =======
 
-  Чтобы постоянно не вводить пароль от рута, нужно воткнуть свой id_rsa.pub в ~/.ssh/authorized_keys на серваке
+  Чтобы не вводить пароль от root, нужно воткнуть ему на серваке в ~/.ssh/authorized_keys локальный id_rsa.pub
 
     $ ansible-playbook -i IP, playbook.yml
 
