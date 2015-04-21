@@ -25,6 +25,8 @@
 * gems - фигачит следующие гемы
     * carrierwave - initializers/carrierwave.rb и app/uploders/application_uploader.rb
 * ansible - добавляет /ansible конфигурацию
+* layout - добавляет вьюхи лейаута бутстрапа на слиме и удаляет дефолтные
+* assets - добавляет ассеты бутстрапа
 
 Ansible
 =======
