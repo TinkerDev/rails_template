@@ -30,6 +30,7 @@ gem 'settingslogic'
 
 # Views Core
 gem 'slim-rails'
+gem 'haml-rails'
 
 # Forms
 # gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
@@ -37,7 +38,8 @@ gem 'slim-rails'
 
 # Presenters Decorators
 # gem 'draper'
-# gem 'cells'
+gem 'cells'
+gem "cells-haml", github: 'trailblazer/cells-haml'
 
 # View Helpers
 gem 'simple-navigation', :git => 'git://github.com/andi/simple-navigation.git'
@@ -61,7 +63,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap-sass', '~> 3.2.0'
 # gem 'compass'
 # gem 'compass-rails'
-gem 'sprockets-rails'
 gem 'sass-rails', '~> 5.0'
 
 # Uploading
@@ -196,6 +197,5 @@ group :development, :test do
 end
 
 group :production do
-  gem 'unicorn'
   # gem 'newrelic_rpm'
 end
