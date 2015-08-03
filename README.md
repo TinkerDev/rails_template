@@ -24,17 +24,5 @@
 * database - предустаналивает config/database.yml и config/database.yml.example
 * gems - фигачит следующие гемы
     * carrierwave - initializers/carrierwave.rb и app/uploders/application_uploader.rb
-* ansible - добавляет /ansible конфигурацию
 * layout - добавляет вьюхи лейаута бутстрапа на слиме и удаляет дефолтные
 * assets - добавляет ассеты бутстрапа
-
-Ansible
-=======
-
-  Чтобы не вводить пароль от root, нужно воткнуть ему на серваке в ~/.ssh/authorized_keys локальный id_rsa.pub
-
-    $ ansible-playbook -i IP, playbook.yml
-
-  Если проснулся панароик, то можно указать ansible требовать ключ от рута
-
-    $ ansible-playbook -i IP, playbook.yml -k

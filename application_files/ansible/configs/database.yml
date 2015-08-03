@@ -1,7 +1,0 @@
-production:
-  adapter: postgresql
-  username: {{ db_user }}
-  password: {{ db_user_password }}
-  encoding: {{ db_encoding}}
-  pool: 8
-  database: {{ db_name }}

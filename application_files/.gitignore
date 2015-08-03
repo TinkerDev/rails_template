@@ -22,7 +22,6 @@ log/*
 tags
 tmp/
 
-config/database.yml
 config/application.local.yml
 config/database.yml
 
