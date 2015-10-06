@@ -37,6 +37,9 @@ set :rbenv_ruby, '2.2.1'
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_roles, :all
 
+set :nvm_bower, '0.12.7'
+set :bower_bin, "/home/wwwapp_name/.nvm/versions/node/#{fetch(:nvm_bower)}/bin/bower"
+
 set :puma_init_active_record, true
 
 
