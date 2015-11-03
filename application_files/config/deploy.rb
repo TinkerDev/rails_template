@@ -3,7 +3,7 @@ lock '3.4.0'
 set :application, 'app_name'
 set :repo_url, 'git@example.com:me/app_name.git'
 
-set :branch, 'master'
+set :branch, ENV['BRANCH'] || 'master'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 set :deploy_to, '/home/wwwapp_name/app_name'
