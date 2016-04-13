@@ -129,10 +129,11 @@ group :development do
   # Pry stuff
   gem 'pry-rails'
   gem 'pry-pretty-numeric' # 1_234_768
-  gem 'pry-nav' # step, next, finish, continue, break
   gem 'pry-doc' # ? loop
   gem 'pry-docmore'
   gem "pry-stack_explorer" # show-stack in console
+  gem 'pry-byebug' # step, next, finish, continue, break
+
 
   gem 'awesome_print' # nice inspection in console
 
